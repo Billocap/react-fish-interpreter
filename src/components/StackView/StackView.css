@@ -23,6 +23,7 @@
   text-align: center;
   padding: 5px;
   border-radius: 3px;
+  overflow: hidden;
 
   color: var(--black);
   background-color: var(--light-gray);
