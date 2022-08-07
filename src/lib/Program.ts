@@ -15,6 +15,8 @@ interface Flags {
   executing: boolean
 }
 
+let timeout = -1
+
 class Program extends Interpreter{
   protected input: Input
   protected output: Output
@@ -83,11 +85,15 @@ class Program extends Interpreter{
 
         this.timer = -1
 
-        setTimeout(() => {
+        clearTimeout(timeout)
+
+        timeout = setTimeout(() => {
           this.execute(time, callback)
         }, temp * 1000)
       } else {
-        setTimeout(() => {
+        clearTimeout(timeout)
+        
+        timeout = setTimeout(() => {
           this.execute(time, callback)
         }, time)
       }
