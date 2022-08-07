@@ -1,0 +1,31 @@
+.stack {
+  width: 70px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.stack-view {
+  display: flex;
+  gap: 5px;
+
+  flex-direction: column;
+  overflow-y: auto;
+
+  scrollbar-width: none;
+}
+
+.stack-view::-webkit-scrollbar {
+  width: 0;
+}
+
+.stack-item {
+  position: relative;
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+
+  color: var(--black);
+  background-color: var(--light-gray);
+
+  transition: top 0.2s;
+}

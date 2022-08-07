@@ -1,0 +1,24 @@
+.code, .code-line {
+  display: grid;
+  gap: 1px;
+}
+
+.code {
+  grid-template-rows: repeat(auto-fill, 15px);
+}
+
+.code-line {
+  grid-template-columns: repeat(auto-fill, 15px);
+  grid-auto-flow: column;
+}
+
+.code-line pre {
+  text-align: center;
+  border-radius: 1px;
+  width: 15px;
+  height: 15px;
+}
+
+.code-line pre.current {
+  background: var(--accent);
+}

@@ -1,0 +1,32 @@
+#control-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#control-panel button {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  transition: color 0.2s;
+}
+
+#control-panel button:hover {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+#control-panel input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  
+  text-align: right;
+  outline: 1px solid var(--dark-gray);
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
+#control-panel input::-webkit-outer-spin-button,
+#control-panel input::-webkit-inner-spin-button {
+  -webkit-appearance: none; 
+}
