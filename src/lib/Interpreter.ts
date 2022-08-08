@@ -84,7 +84,7 @@ abstract class Interpreter {
     }
   }
 
-  private swin(char: string) {
+  private swim(char: string) {
     switch (char) {
       case "O":
         this.pointer.rise()
@@ -254,7 +254,17 @@ abstract class Interpreter {
       case "g":
         const y_ = this.stack.pop()
         const x_ = this.stack.pop()
-        const v_ = this.code[y_] ? this.code[y_].charAt(x_) || 0 : 0
+        let v_: string | number = 0
+        
+        if (this.code[y_]) {
+          const testChar = this.code[y_].charAt(x_)
+
+          if (testChar) {
+            v_ = testChar
+          } else {
+            v_ = this.code[y_].charAt(x_ - 1) ? "\n" : 0
+          }
+        }
 
         this.stack.push(v_)
         break
@@ -360,7 +370,7 @@ abstract class Interpreter {
         ["=()", this.boolean],
         ["!?.", this.jump],
         ["ion", this.io],
-        ["uO", this.swin],
+        ["uO", this.swim],
         ["CR", this.functions]
       ])
 
