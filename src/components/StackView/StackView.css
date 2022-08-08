@@ -8,7 +8,7 @@
   display: flex;
   gap: 5px;
 
-  flex-direction: column;
+  flex-direction: column-reverse;
   overflow-y: auto;
 
   scrollbar-width: none;
@@ -24,6 +24,7 @@
   padding: 5px;
   border-radius: 3px;
   overflow: hidden;
+  flex-shrink: 0;
 
   color: var(--black);
   background-color: var(--light-gray);
